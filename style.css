@@ -1,0 +1,44 @@
+body {
+  background-color: #E0EFF7;
+  font-family: "Times New Roman", serif;
+}
+
+.category {
+  width: 80%;
+  padding: 50px;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin: auto;
+  background: #FFFFFF;
+  box-shadow: 10px 10px 20px gray;
+}
+
+.section {
+}
+
+.heading {
+  width: 100%;
+  background-color: #003399;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: xx-large;
+}
+
+.subheading {
+  font-size: x-large;
+}
+
+.text {
+  font-size: large;
+}
+
+.image {
+  display: block;
+  margin: auto;
+}
+
+.code {
+  font-family: "Lucida Console", monospace;
+}

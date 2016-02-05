@@ -1,0 +1,15 @@
+application: udacity-ipnd
+version: 0
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: .*
+  static_dir: lesson_notes.html
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

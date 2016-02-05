@@ -511,7 +511,7 @@
       <h2 class="subheading">Strings</h2>
       <p>Python isn't just numbers. You can have sequences of characters called
       strings. Strings are enclosed in single or double quotes, &apos; or 
-      &quote;, to delineate them from variables. It doesn't matter which you
+      &quot;, to delineate them from variables. It doesn't matter which you
       use so long as the string begins and ends with the same one.</p>
 
       <section class="code">
@@ -544,12 +544,12 @@
       in a string is 0 and count right. Negative numbers start at the end of 
       the string with -1 and count left.<p>
 
-      <section class="code">
-        <p>name = "Corey"<br>
+      <div class="code">
+        name = "Corey"<br>
         print name&lsqb;0&rsqb; &num; Result: C<br>
         print name&lsqb;2&rsqb; &num; Result: r<br>
-        print name&lsqb;-1&rsqb; &num; Result: y</p>
-      </section>
+        print name&lsqb;-1&rsqb; &num; Result: y
+      </div>
 
       <p>Trying to index a character that isn't in the string produces an 
         error:</p>
@@ -582,7 +582,7 @@
         space between the quotation marks, will always be found. Python thinks
         that every string begins with the empty string.<p>
 
-      <section class="code">
+      <div class="code">
         print "test".find&lpar;"te"&rpar; &num; Result: 0<br>
         print "test".find&lpar;"st"&rpar; &num; Result: 2<br>
         print "text".find&lpar;"text"&rpar; # Result: 0<br>
@@ -591,7 +591,7 @@
         print "text".find&lpar;""&rpar; # This is an empty string. Result: 0
           <br>
         print "text".find&lpar;" "&rpar; # This is a space. Result: -1<br>
-      </section>
+      </div>
       
       <p>You can find the second, third, and so on occurrence of a string by
         specifying a starting position after the first character of the string.
@@ -621,6 +621,7 @@
           really well.<br>
       </section>
     </section>
+  </article>
 
 </body>
 
