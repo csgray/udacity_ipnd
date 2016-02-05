@@ -5,8 +5,8 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: .*
-  static_dir: lesson_notes.html
+- url: /.*
+  script: main.app
 
 libraries:
 - name: webapp2
