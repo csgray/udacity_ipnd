@@ -1,0 +1,39 @@
+{# Refers back to the base template #}
+{% extends "base.html" %}
+
+{# identifies this content as going in the block content in the base template #}
+{% block content %}}
+
+<article class="category">
+  <h1 class="heading">Basics of the Web</h1>
+
+  <section class="section">
+    <h2 class="subheading">The Internet</h2>
+      <p class="text">The internet is a network of computers communicating
+         with each other through the use of HTTP requests. Client computers
+         request <em>HTML</em> documents from web servers &lpar;any computer
+         hosting a file can be a server though "servers" usually refer to
+         dedicated platforms&rpar; through the internet. The server sends the
+         HTML file to the client computer where a browser interprets and
+         displays the file. </p>
+      <p class="text">Most Alaskans know that the internet is not a series
+         of tubes.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="subheading">Code</h2>
+      <p class="text">Code is instructions written in a language that
+         computers can understand. Programmers interpret what the humans want
+         computers to do so that computers can then execute the instructions.
+  </section>
+
+  <section class="section">
+    <h2 class="subheading">"Stupid" Computers</h2>
+      <p class="text">Computers interpret code literally and will do
+          exactly what they are told. They cannot deduce what you meant for
+          them to do, so errant instructions &lpar;"bugs" in the code&rpar;
+          wreak havoc on websites and programs.</p>
+  </section>
+</article>
+
+{% endblock %}
