@@ -1,0 +1,44 @@
+{# Refers back to the base template #}
+{% extends "base.html" %}
+
+{# identifies this content as going in the block content in the base template #}
+{% block content %}
+
+<article class="category">
+  <h1 class="heading">Tips and Tricks</h1>
+  <section class="section">
+    <h2 class="subheading">Google is Your Friend</h2>
+      <p class="text">There is too much for any programmer to remember.
+          Rather than try to remember specific details &lpar;such as HTML
+          character codes&rpar;, programmers focus on understanding how to code
+          and why things work. You can look up the specifics.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="subheading">Methodology</h2>
+      <img class="image" src=
+      "http://s10.postimg.org/gv7gak78p/Code_Test_Refine.png" alt="Code >
+      Test > Refine" title="The Development Cycle">
+      <ol>
+        <li>Break the design into boxes</li>
+        <li>Look for repeated styles and semantics &lpar;which use tags&rpar;
+          </li>
+        <li>Write the HTML</li>
+        <li>Apply styles &lpar;from biggest to smallest element&rpar; using
+          CSS</li>
+        <li>Test and fix</li>
+      </ol>
+    <p class="text">Remember that different browsers may display the same
+        code differently, so test your code in multiple browsers.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="subheading">Check Your Work</h2>
+      <a href="https://validator.w3.org/#validate_by_input">Validate your
+          HTML.</a><br>
+      <a href="http://jigsaw.w3.org/css-validator/#validate_by_input">
+          Validate your CSS.</a><br>
+  </section>
+</article>
+
+{% endblock %}

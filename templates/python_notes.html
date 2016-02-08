@@ -1,0 +1,258 @@
+{# Refers back to the base template #}
+{% extends "base.html" %}
+
+{# identifies this content as going in the block content in the base template #}
+{% block content %}
+
+  <article class="category">
+    <h1 class="heading">Python</h1>
+    <section class="section">
+      <h2 class="subheading">Special Notes</h2>
+      Python is case-sensitive.<br>
+      Python is space-sensitive and will generate an error if there is a space
+        in front of a command.<br>
+      Python comments start with &num;<br>
+      You can break up lines of code with a &bsol;<br>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Vocabulary</h2>
+      Computer: A universal machine that can be programmed to do any
+        computation<br>
+      Expression: Something that has a value.<br>
+      Program: What tells the computer what steps to take<br>
+      Precise Squence of Steps: Series of instructions to accomplish a
+        task<br>
+      High-Level Language: Input that works through an interpreter and not on
+        the computer directly<br>
+      Input: Programs that we write<br>
+      Interpreter: Executes our programs on the computer<br>
+      Method: Procedure built into Python
+    </section>
+
+    <section>
+      <h2 class="subheading">Natural Languages vs Code</h2>
+      <p>Natural languages are ambiguous: Different people can interpret the
+        same sentence to mean different things, but we want computers to
+        interpret things the same way every time.</p>
+      <p>Natural languages are verbose: It takes too many words to detail every
+        step of even a simple action.</p>
+      <p>Example: print 2 + 2 +<br>
+        We can figure out what this means, but Python produces a syntax error.
+        </p>
+    </section>
+
+    <section>
+      <h2 class="subheading">Backus-Naur Form</h2>
+      <p>The full Backus-Naur Form is pretty complicated, as this
+      <a href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form">
+      Wikpedia article</a> shows, but the gist is that it use symbols to show
+      how computer programming languages work. The gist of it is that
+      non-terminals &lpar;variables&rpar; are on the left side with an arrow
+      pointing towards their replacements which can be other variables, the
+      same variable, or terminals which have no replacements and never appear
+      on the left side of the form.</p>
+
+      <p>A derivation is when you keep working down the expression until all of
+      the non-terminals are replaced by terminals. We can explain Python that
+      way.</p>
+    </section>
+
+    <section>
+      <h2 class="subheading">Python Grammar for Arithmetic Expressions</h2>
+      <table>
+      <tr>
+      <td>&lt;expression&gt;</td> <td>&rarr;</td> <td>&lt;expression&gt;
+        &lt;operator&gt; &lt;expression&gt;</td>
+      </tr>
+      <tr>
+      <td>&lt;expression&gt;</td> <td>&rarr;</td> <td>&lt;number&gt;</td>
+      </tr>
+      <tr>
+      <td>&lt;expression&gt;</td> <td>&rarr;</td> <td>&lpar; &lt;expression&gt;
+        &rpar;</td>
+      </tr>
+      <tr>
+      <td>&lt;operator&gt;</td> <td>&rarr;</td> <td>&plus;</td>
+      </tr>
+      <tr>
+      <td>&lt;operator&gt;</td> <td>&rarr;</td> <td>&minus;</td>
+      </tr>
+      <tr>
+      <td>&lt;operator&gt;</td> <td>&rarr;</td> <td>&midast;</td>
+      </tr>
+      <tr>
+      <td>&lt;operator&gt;</td> <td>&rarr;</td> <td>&sol;</td>
+      </tr>
+      <tr>
+      <td>&lt;number&gt;</td> <td>&rarr;</td> <td>0, 1, ...</td>
+      </tr>
+      </table>
+
+      <p>Note: Python ignores the decimal &lpar;remainder&rpar; when you divide
+        an integer by another integer. You need to give one of the variables a
+        decimal, even a .0, to get decimal results.</p>
+    </section>
+
+    <section>
+      <h2 class="subheading">Variables</h2>
+      <p>Variables make it easy to refer to expressions because rather than
+        type the whole expression out again you can refer to its variable. It
+        simultaneously labels the expression and lets you refer back to it
+        to reduce the amount of repeat code.</p>
+
+      <p>A 'magic number' is a number without a variable. Those are bad.</p>
+
+      <p>You assign a value to a variable when you state what expression or
+        number it represents. You do that using &equals; which does not mean
+        "equals" like in math but is an arrow indicating that whatever is to
+        the right of the &equals; is the value of the variable on the left.</p>
+
+      Arithmetic: 2 &plus; 3 &equals; 5<br>
+      Python: my_variable &equals; 5<br>
+
+      <p>The above is an example of an Assignment Statement: name &equals;
+        expression</p>
+
+      <p>Python will keep calculating and updating the value of a variable as
+        it moves down the code.</p>
+
+      <section class="code">
+        <table>
+        <tr>
+        <td>days</td> <td>&equals;</td> <td>7 &midast; 7</td>
+          <td>&num; Result: 49</td>
+        </tr>
+        <tr>
+        <td>days</td> <td>&equals;</td> <td>48</td>
+          <td>&num; Changes the value to 48</td>
+        </tr>
+        <tr>
+        <td>days</td> <td>&equals;</td> <td>days &minus; 1</td>
+          <td>&num; Result: 48 - 1 = 47. Variable has a new value.</td>
+        </tr>
+        <tr>
+        <td>days</td> <td>&equals;</td> <td>days &minus; 1</td>
+          <td>&num; Result: 47 - 1 = 46</td>
+        </tr>
+        </table>
+      </section>
+    </section>
+
+    <section>
+      <h2 class="subheading">Strings</h2>
+      <p>Python isn't just numbers. You can have sequences of characters called
+      strings. Strings are enclosed in single or double quotes, &apos; or
+      &quot;, to delineate them from variables. It doesn't matter which you
+      use so long as the string begins and ends with the same one.</p>
+
+      <section class="code">
+        print 'Hello' # Result: Hello<br>
+        print "Hello" # Result: Hello<br>
+      </section>
+
+      <p>You can add strings together which is called "concatenation", but you
+      cannot concatenate strings and integers. You need to include the spaces
+      in the strings as Python will not add them. You can multiply strings.</p>
+
+      <section class="code">
+        name = "Corey"<br>
+        print "Hello" &plus; name &num; Result: HelloCorey<br>
+        print "Hello " + name + 10 * "!" &num; Result: Hello Corey!!!!!!!!!!
+        <br>
+      </section>
+
+      <p>Note that strings are not integers. You cannot do math with strings.
+        Instead of being summed, numbers in strings are printed side by side.
+      </p>
+
+      <section class="code">
+      print 2 + 2 # Result: 4<br>
+      print "2" + "2" # Result: 22<br>
+      </section>
+
+      <p>You can select the characters of a string, called 'indexing', by
+      putting an integer or expression in square brackets. The first character
+      in a string is 0 and count right. Negative numbers start at the end of
+      the string with -1 and count left.<p>
+
+      <div class="code">
+        name = "Corey"<br>
+        print name&lsqb;0&rsqb; &num; Result: C<br>
+        print name&lsqb;2&rsqb; &num; Result: r<br>
+        print name&lsqb;-1&rsqb; &num; Result: y
+      </div>
+
+      <p>Trying to index a character that isn't in the string produces an
+        error:</p>
+
+      <section class="code">IndexError: string out of range</section>
+
+      <p>It is possible to index more than one character. You can specify a
+        starting and stopping character then use the characters between them.
+        The index will stop immediately before the stopping character. An empty
+        specification will run to the beginning or end of the string.</p>
+
+      <section class="code">
+        word = 'assume'<br>
+        print word[3] &num; Result: u<br>
+        print word[3:4] &num; Result: u<br>
+        print word[3:3] &num; This stops where it starts. Result:  <br>
+        print word[4:6] &num; From 4 to 6. Result: me<br>
+        print word[4:] &num; From 4 to end. Result: me<br>
+        print word[:2] &num; From beginning to 2. Result: as<br>
+        print word[:] &num; From beginning to end. Result: assume<br>
+      </section>
+
+      <p>It is also possible to search for a string within a string.</p>
+
+      <span class="code">&lt;string1&gt;.find&lpar;&lt;string2&gt;&rpar;</span>
+
+      <p>This will not print the string itself but the numerical position of
+        the first character of the second string within the larger string. The
+        result be -1 if the string can't be found. An empty string, meaning no
+        space between the quotation marks, will always be found. Python thinks
+        that every string begins with the empty string.<p>
+
+      <div class="code">
+        print "test".find&lpar;"te"&rpar; &num; Result: 0<br>
+        print "test".find&lpar;"st"&rpar; &num; Result: 2<br>
+        print "text".find&lpar;"text"&rpar; # Result: 0<br>
+        print "text".find&lpar;"Text"&rpar; # Python is case sensitive.
+          Result: -1<br>
+        print "text".find&lpar;""&rpar; # This is an empty string. Result: 0
+          <br>
+        print "text".find&lpar;" "&rpar; # This is a space. Result: -1<br>
+      </div>
+
+      <p>You can find the second, third, and so on occurrence of a string by
+        specifying a starting position after the first character of the string.
+      </p>
+
+      <section class="code">
+        &lt;string1&gt;.find&lpar;&lt;string2&gt;, &lt;number&gt;&rpar;<br>
+        print "test".find&lpar;"t"&rpar; &num; Result: 0<br>
+        print "test".find&lpar;"t", 1&rpar; &num; Result: 3<br>
+      </section>
+
+      <p>There is also a built-in method for replacing part of a string with
+        a new string.</p>
+      <span class="code">&lt;string&gt;.replace&lpar;&lt;old&gt;,
+        &lt;new&gt;&lsqb;, &lt;max&gt;&rsqb;&rpar;</span>
+
+      <p> The <span class="code">&lsqb;, &lt;max&gt;&rsqb;;</span> part is
+        optional and specifies the maximum number of times to make the
+        replacement. Don't include the square brackets as that is just
+        notation for optional.</p>
+
+      <section class="code">
+        sentence = "A NOUN went on a walk. They can VERB really well."<br>
+        sentence = sentence.replace("NOUN", "duck")<br>
+        sentence = sentence.replace("VERB", "waddle")<br>
+        print sentence &num; Result: A duck went on a walk. They can waddle
+          really well.<br>
+      </section>
+    </section>
+  </article>
+
+{% endblock %}

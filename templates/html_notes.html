@@ -1,0 +1,194 @@
+{# Refers back to the base template #}
+{% extends "base.html" %}
+
+{# identifies this content as going in the block content in the base template #}
+{% block content %}
+
+<article class="category">
+    <h1 class="heading">HTML</h1>
+      <p class="text">Websites are text documents written in HTML. "HTML" is
+       short for "HyperText Markup Language." A "language" consists of syntax
+       + rules. The information on a website is its "content" while the
+       formatting is done with "markup" using <em>elements</em> and <em>tags
+       </em>. HTML tells the browser what kind of content is on the page:
+       text, image, etc. Webpages with the same HTML can look different
+       because of the style applied to them.</p>
+
+    <section class="section">
+      <h2 class="subheading">Document Object Model</h2>
+        <p class="text">DOM is the tree-like structure of HTML which sees
+         elements as boxes within boxes within boxes. This compartmentalizing
+         of the elements of a website enables programs to access and change
+         parts of the website without altering the other parts. Elements and
+         tags are the basic components of the tree structure.</p>
+
+        <p class="text">Elements are related to each other vertically as
+          "parents" and "children" or laterally as "siblings." Children are
+          nested within their parents, and siblings have the same parent
+          element. Most child elements are the parents of other elements and
+          vice versa. This gives the DOM its "tree-like" structure because
+          the child elements branch off from their parents, then their child
+          elements branch off from them, and so on.</p>
+
+        <p class="text">Here is a diagram of the DOM of <a href=
+          "http://assignments.udacity-extras.appspot.com/courses/html-css/samples/explore.html">
+          this sample page:</a></p>
+
+        <img class="image" src=
+        "http://s30.postimg.org/m3egmiga9/DOM_diagram.png" alt="Diagram of a
+        Sample DOM" title="Diagram of a Sample DOM">
+
+        <p class="text">This shows that the "head" and "body" elements are
+          children of the "html" element and branch off from it. "Head" and
+          "body" are siblings. The "body" element has two children of its
+          own: "h1" and "div". Those both branch off of their parent, so
+          they are siblings, and both have children of their own. And so on.
+        </p>
+
+        <p class="text">Programmers can move vertically or laterally along
+          the DOM. Their code can follow the parent-child relationships to
+          access different elements. This is the basis of inheritance: The
+          children of a parent element will have that elements' properties
+          unless their code supersedes it. For example: The "font" property
+          on the "body" element of this webpage is "Times New Roman". That
+          means that the font property of all the children elements is also
+          Times New Roman without having to set that property for each
+          element. However, the blue background of the body element is
+          superseded by code in the child elements that says to have a white
+          background.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Simple Structure</h2>
+        <p class="text">Division: &lt;div class="example"&gt;content&lt;/div
+          &gt; - Applies the "example" class to everything within this
+          document division.<br>
+          Span: &lt;span class="example"&gt;content&lt;/span&gt; - Applies
+          the "example" class to everything within this line section.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Semantic Structure</h2>
+        <p class="text">HTML5 introduced semantic elements that describe the
+          content that they contain. They compartmentalize things like "div"
+          or "span" but mean something as well. <a href=
+          "http://www.w3schools.com/html/html5_semantic_elements.asp">Look
+          here for more information.</a> The following are the semantic
+          elements listed on that page:
+        </p>
+
+        <table>
+          <tr>
+            <td>&lt;article&gt;</td>
+            <td>Defines an article</td>
+          </tr>
+          <tr>
+            <td>&lt;aside&gt;</td>
+            <td>Defines content aside from the page content</td>
+          </tr>
+          <tr>
+            <td>&lt;details&gt;</td>
+            <td>Defines additional details that the user can view or hide
+            </td>
+          </tr>
+          <tr>
+            <td>&lt;figcaption&gt;</td>
+            <td>Defines a caption for a &lt;figure&gt; element</td>
+          </tr>
+          <tr>
+            <td>&lt;figure&gt;</td>
+            <td>Specifies self-contained content, like illustrations,
+              diagrams, photos, code listings, etc.</td>
+          </tr>
+          <tr>
+            <td>&lt;footer&gt;</td>
+            <td>Defines a footer for a document or section</td>
+          </tr>
+          <tr>
+            <td>&lt;header&gt;</td>
+            <td>Specifies a header for a document or section</td>
+          </tr>
+          <tr>
+            <td>&lt;main&gt;</td>
+            <td>Specifies the main content of a document</td>
+          </tr>
+          <tr>
+            <td>&lt;mark&gt;</td>
+            <td>Defines marked/highlighted text</td>
+          </tr>
+          <tr>
+            <td>&lt;nav&gt;</td>
+            <td>Defines navigation links</td>
+          </tr>
+          <tr>
+            <td>&lt;section&gt;</td>
+            <td>Defines a section in a document</td>
+          </tr>
+          <tr>
+            <td>&lt;summary&gt;</td>
+            <td>Defines a visible heading for a &lt;details&gt; element</td>
+          </tr>
+          <tr>
+            <td>&lt;time&gt;</td>
+            <td>Defines a date/time</td>
+          </tr>
+        </table>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Elements and Tags</h2>
+        <p class="text">An <b>element</b> includes the opening and closing
+          tags and the content between them. Elements can also have <em>
+          attributes</em>.</p>
+
+        <p class="text">A <b>tag</b> is a command for the web browser that is
+          set within angle brackets. Tags usually come in opening and closing
+          pairs, but <em>void tags</em> do not have a closing tag. Tags can
+          format text, create links, display images, and more. They can also
+          have attributes with values.</p>
+
+          Bold: &lt;b&gt;<b>bold</b>&lt;/b&gt; <br>
+          Emphasis: &lt;em&gt;<em>emphasis</em>&lt;/em&gt;<br>
+          Line Break &lpar;inline&rpar;: &lt;br&gt; - Inline elements violate
+          other elements' personal space. <br>
+          Paragraph &lpar;block&rpar;: &lt;p&gt;paragraph&lt;/p&gt; - Block
+          elements have an "invisible" box around them. Like mimes. <br>
+          Heading, where # is 1-6: &lt;h#&gt;heading&lt;/h#&gt;<br>
+          Comment: &lt;!--Comments are not displayed by the browser.--&gt;
+          <br>
+
+      <p class="text"><b>Attributes</b> are special tags that set the
+        properties of an HTML element.</p>
+
+        Anchor &lpar;makes links&rpar;: &lt;a href="http://www.uaf.edu"&gt;<a
+        href="http://www.uaf.edu">University of Alaska Fairbanks</a>&lt;/a&gt;
+        <br>
+
+        Images: &lt;img src="http://www.alaska.edu/files/oit/oit_logo_horiz
+        .png" alt="The UAF OIT Logo" title="The UAF OIT Logo"&gt; <br>
+        <img class="image" src=
+        "http://www.alaska.edu/files/oit/oit_logo_horiz.png" alt="The UAF
+        OIT Logo" title="The UAF OIT Logo">
+
+        SRC &lpar;source&rpar;: The location of the image.<br>
+        ALT: What displays if the image cannot be loaded.<br>
+        TITLE: The tooltip that appears when the mouse hovers over the image.
+        <br>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">HTML Document Formatting</h2>
+        &lt;!DOCTYPE HTML&gt; - This tells the browser what the page is
+        written in.<br>
+        &lt;html&gt; - This surrounds the entire document.<br>
+        &lt;head&gt; - This includes metadata like Java, CSS, etc. that isn't
+        part of the website's content.<br>
+        &lt;title&gt;title&lt;/title&gt; - This appears in the top of the
+        browser or tab.<br>
+        &lt;body&gt; - This is the actual stuff on the webpage.<br>
+        &lt;/body&gt;<br>
+        &lt;/html&gt;<br>
+    </section>
+</article>
+
+{% endblock %}

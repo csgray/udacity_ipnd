@@ -1,0 +1,113 @@
+{# Refers back to the base template #}
+{% extends "base.html" %}
+
+{# identifies this content as going in the block content in the base template #}
+{% block content %}
+
+<article class="category">
+    <h1 class="heading">CSS: Cascading Style Sheets</h1>
+      <p class="text">CSS is another language with syntax and rules. It gives
+        HTML elements their style. Browsers have built-in style sheets, but
+        that is superceded by the style sheet belonging to the website.</p>
+
+    <section class="text">
+      <h2 class="subheading">Vocabulary</h2>
+          Cascading: Go down the rules until finding the most specific rule
+          which overrides the other rules.<br>
+          Style:
+        <ol>
+          <li>HTML Element: &lt;style&gt;div {color:blue;} &lt;/style&gt;
+          </li>
+          <li>HTML Attribute:  &lt;div style="color:blue;"&gt;<span style=
+            "color:blue;">blue text</span>&lt;div&gt;</li>
+          <li>Noun: The way a webpage looks.</li>
+          <li>Verb: To make the webpage look a certain way.</li>
+        </ol>
+        Rule: A line of CSS code that describes the value that an attribute
+        should take.<br>
+        Property: The thing that is being changed.<br>
+        Value: What the thing that is being changed is changed to.<br>
+        Selector: The name of the HTML class or attribute that the properties
+        belong to.<br>
+        Class: A group of elements that are styled together. Cannot contain
+        punctuation.<br>
+        ID: The unique identifier of an HTML element.<br>
+        <p class="text">Comment: &lt;/* This won't be displayed by the
+          browser */&gt;<br>
+    </section>
+
+    <section class="section">
+      <h2 class="subheading">Including CSS</h2>
+      Best Practice: Create a separate CSS file and add &lt;link
+      rel=”stylesheet” href=”filename.css”&gt;<br>
+      Acceptable: Add &lt;style&gt; div { property:value }&lt;/style&gt; in
+      the &lt;head&gt; section<br>
+      Bad: CSS in individual HTML elements<br>
+    </section>
+
+    <section class="text">
+      <h2 class="subheading">Properties</h2>
+        <p class="text">Rules are applied not only to the specified element
+          but to child elements which are beneath the parent element.<br>The
+          following properties are inherited:</p>
+        <ul>
+          <li>color</li>
+          <li>font</li>
+          <li>letter-spacing</li>
+          <li>line-height</li>
+          <li>list-style</li>
+          <li>text-align</li>
+          <li>text-indent</li>
+          <li>text-transform</li>
+          <li>visibility</li>
+          <li>white-space</li>
+          <li>word-spacing</li>
+        </ul>
+        <p class="text">For a complete list of properties in CSS, check <a
+          href="http://www.w3schools.com/cssref/">this reference</a>.<br>
+        For Chrome and Safari, check the <a href=
+        "http://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css">
+        default Webkit
+        stylesheet</a>.<br>
+        For Firefox, check the <a href=
+        "http://hg.mozilla.org/mozilla-central/file/tip/layout/style/html.css"
+        > default Mozilla stylesheet
+      </a>.
+        </p>
+    </section>
+
+    <section class="text">
+      <h2 class="subheading">Structure</h2>
+        <p class="text">Container elements are the boxes that content lives
+          in. Every HTML element has four elements: content, padding,
+          border, andmargin.<br>
+          The size of an element/box is: Content + Padding + Border<br>
+          It can be difficult to get the size of a box just right, so try two
+          things:<p>
+        <ol>
+          <li>Set sizes in terms of percentages instead of pixels</li>
+          <li>Se the box-sizing attribute to border-box</li>
+        </ol>
+
+          Content: The image or text that appears on the site<br>
+          Division: &lt;div&gt;Defines a block in a document&lt;/div&gt;<br>
+          Span: &lt;span&gt;Defines an in-line section of a document&lt;/span
+          &gt;
+          <br>
+          Padding: Clears an area around the content and has the background
+          color
+          <br>
+          Border: Goes around the padding and has the color of the box itself
+          <br>
+          Margin: Creates a transparent space between boxes by clearing the
+          area around the border<br>
+
+        <p class="text">Divisions default to the entire width of a page, but
+          "display:flex;" will let divisions appear next to each other.<br>
+          Check this <a href=
+          "https://css-tricks.com/snippets/css/a-guide-to-flexbox/">guide to
+          Flexbox</a> for details.</p>
+    </section>
+</article>
+
+{% endblock %}
