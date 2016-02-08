@@ -41,17 +41,30 @@ class HTMLNotes(Handler):
     def get(self):
         self.render("html_notes.html")
 
+
 class CSSNotes(Handler):
     def get(self):
         self.render("css_notes.html")
+
 
 class TipsAndTricks(Handler):
     def get(self):
         self.render("tips_and_tricks.html")
 
+
 class PythonNotes(Handler):
     def get(self):
         self.render("python_notes.html")
+
+
+class Internet(Handler):
+    def get(self):
+        self.render("internet.html")
+
+
+class Databases(Handler):
+    def get(self):
+        self.render("databases.html")
 
 app = webapp2.WSGIApplication([("/", MainPage),
                                ("/web_basics", WebBasics),
@@ -59,4 +72,6 @@ app = webapp2.WSGIApplication([("/", MainPage),
                                ("/css_notes", CSSNotes),
                                ("/tips_and_tricks", TipsAndTricks),
                                ("/python_notes", PythonNotes),
+                               ("/internet", Internet),
+                               ("/databases", Databases),
                                ], debug=True)

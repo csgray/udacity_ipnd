@@ -1,0 +1,172 @@
+{# Refers back to the base template #}
+{% extends "base.html" %}
+
+{# identifies this content as going in the block content in the base template #}
+{% block content %}
+
+<article class="category">
+  <h1 class="heading">The Internet</h1>
+
+  <section class="section">
+    <h2 class="subheading">Networking Vocabulary</h2>
+      Basic Format: <span class="code">protocol://host/path?query</span><br>
+
+      Network: A network is a group of entities that can communicate, even
+      though they are not directly connected.<br>
+
+      Latency: The time it takes for a message to get from the source to the
+      destination usually expressed in milliseconds (1/1000th of a second).<br>
+
+      Bandwidth: The amount of information that can be transmitted per unit of
+      time usually expressed as Mbps (million bits per second).<br>
+
+      Bit: The smallest unit of information expressed as an off/on (0/1) state.<br>
+
+      Binary Questions: Questions with a 50/50 chance of having either answer
+      be correct which reduces the size of queries by half each time for the
+      most efficient acquisition of information.<br>
+
+      Port: Follows the colon in the address and specifies which program,
+      process, or service is being reached on the server.<br>
+
+      Protocol: The set of rules that people agree to that tell you how two
+      entities talk to each other. For the web, client and server
+      communication is handled by the HyperText Transfer Protocol (HTTP).
+  </section>
+
+  <section>
+    <h2 class="subheading">Queries</h2>
+      <p>Format: name = value<br>
+      First parameter is separated from the URL by ?<br>
+      Following parameters are separated by &<br>
+      Fragments, which are client-side and follow a #, refer to a part of a webpage</p>
+
+      An example based on a game's bulletin board:<br>
+      <span class="code"> http://www.somegame.com/viewtopic.php?f=12&t=3456#p7890</span><br>
+
+      <p>"f" is a query for the forum, "t" is a query for the thread," and "#p" is
+      a fragment that automatically moves the page to display a particular post.</p>
+  </section>
+
+  <section>
+    <h2 class="subheading">Servers</h2>
+      <p>Servers host literally everything that is on the internet. They
+      receive requests from clients (typically a user's web browser) and return
+      either static or dynamic content. Static content doesn't change and is
+      things like pre-written files and images. Dynamic content is made as it
+      is requested and includes web applications.</p>
+  </section>
+
+  <section>
+    <h2 class="subheading">Requests</h2>
+      Example: <span class="code">GET /foo HTTP/1.1</span><br>
+      <p>Method: GET (in this example) or POST<br>
+      Path: /foo<br>
+      Protocol/Version: HTTP/1.1</p>
+
+    GET:
+      <ul>
+          <li>Parameters in URL</li>
+          <li>Used for fetching documents</li>
+          <li>Limited by maximum URL length</li>
+          <li>OK to cache</li>
+          <li>Shouldn't change the server (can make the same request repeatedly)</li>
+      </ul>
+
+    POST:
+      <ul>
+          <li>Parameters in body</li>
+          <li>Used for updating data</li>
+          <li>No max length</li>
+          <li>Not OK to cache</li>
+          <li>OK to change the server (that's the point)</li>
+      </ul>
+  </section>
+
+  <section>
+    <h2 class="subheading">Responses</h2>
+      Example: <span class="code">HTTP/1.1 200 OK</span><br>
+      <p>Protocol/Version: HTTP/1.1<br>
+      Status Code and Reason Phrase:
+      <ul>
+        <li>200 - OK</li>
+        <li>302 - Found</li>
+        <li>404 - Not Found</li>
+        <li>500 - Server Error</li>
+      </ul></p>
+  </section>
+
+  <section>
+    <h2 class="subheading">Headers</h2>
+      Content-Length: 1539<br>
+      Content-Type: text/html;<br>
+      Date: Mon, 08 Feb 2018 20:59:15 GMT<br>
+      Host: www.example.com (because machines can have many names)<br>
+      Server: Apache /2.2.3 (Don't include this! Security risk!)<br>
+      User-Agent: Chrome (usually your browser)
+  </section>
+
+  <section>
+    <h2 class="subheading">Forms</h2>
+      Forms are POST requests that submit data to servers with the following
+      elements:
+
+      <p>
+          &lt;form action="http://www.example.com"&gt; is where the input submits to<br>
+          &lt;input type="text"&gt; is the default and creates a typeable form<br>
+          &lt;input type="password"&gt; replaces the input with dots but sends
+          it in insecure plain text<br>
+          &lt;input type="checkbox"&gt; creates a checkbox<br>
+          &lt;input type="radio"&gt; creates buttons that are grouped by name
+          where selecting on button deselects the rest<br>
+          &lt;input name="example"&gt; is the name of the input field<br>
+          &lt;input value="value"&gt; sets the value of a button<br>
+          &lt;label&gt; put inputs here to label them &lt;/label&gt;<br>
+          &lt;select&gt;creates a drop-down menu
+      </p>
+
+      Example:<br>
+      <p class="code">
+        &lt;form&gt;<br>
+          &lt;input type=&quot;text&quot;&gt;<br>
+          &lt;input type=&quot;password&quot;&gt;<br>
+          &lt;input type=&quot;checkbox&quot;&gt;<br>
+        &lt;/form&gt;<br>
+      <br>
+        &lt;br&gt;<br>
+      <br>
+        &lt;form&gt;<br>
+          &lt;label&gt;<br>
+            One<br>
+            &lt;input type=&quot;radio&quot; name=&quot;q&quot; value=&quot;one&quot;&gt;<br>
+          &lt;/label&gt;<br>
+      <br>
+          &lt;label&gt;<br>
+            Two<br>
+            &lt;input type=&quot;radio&quot; name=&quot;q&quot; value=&quot;two&quot;&gt;<br>
+          &lt;/label&gt;<br>
+      <br>
+          &lt;label&gt;<br>
+            Three<br>
+            &lt;input type=&quot;radio&quot; name=&quot;q&quot; value=&quot;three&quot;&gt;<br>
+          &lt;/label&gt;<br>
+          &lt;br&gt;<br>
+          &lt;input type=&quot;submit&quot;&gt; &lt;!--creates a submit button--&gt;<br>
+        &lt;/form&gt;<br>
+      <br>
+        &lt;br&gt;<br>
+      <br>
+        &lt;form&gt;<br>
+          &lt;select name=&quot;r&quot;&gt;<br>
+            &lt;option value=&quot;1&quot;&gt;The Number One&lt;/option&gt;<br>
+            &lt;option value=&quot;2&quot;&gt;two&lt;/option&gt;<br>
+            &lt;option value=&quot;3&quot;&gt;three&lt;/option&gt;<br>
+          &lt;/select&gt;<br>
+          &lt;br&gt;<br>
+          &lt;input type=&quot;submit&quot;&gt;<br>
+        &lt;/form&gt;<br>
+      </p>
+  </section>
+</article>
+
+{% endblock %}
